@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Chinese Slot Filling</title>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<div>
+    {% for query in queries: %}
+        <h2>{{ query.id }}: {{ query.name }}</h2>
+
+        <p>
+        <table>
+            <tr>
+                <td>
+                    entity type:
+                </td>
+                <td>
+                    {{ query.entity_type }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    doc id:
+                </td>
+                <td>
+                    {{ query.doc_id }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    snapshot:
+                </td>
+                <td>
+                    <div style="width:400px;">to add later</div>
+                </td>
+            </tr>
+        </table>
+        </p>
+        {% set slot_types = sf_answers[0].get(query.id).output.keys() %}
+        <table style="width:100%">
+            <tr>
+                <th>Slot Name</th>
+                <th>Run ID</th>
+                <th>Wide Provenance</th>
+                <th>Slot Filler</th>
+                <th>Slot Filler Provenance</th>
+                <th>Confidence Score</th>
+            </tr>
+            {% for slot_type in slot_types %}
+                {% set first_row = [1] %}
+
+                {% set line_output_count = sf_answers|count_l(query.id, slot_type) %}
+
+                {% for answer in sf_answers %}
+                    {% set answer_first_row = [1] %}
+                    {% if answer.get(query.id).output.get(slot_type)|length == 0 %}
+                        <tr>
+                            {% if first_row[0] == 1 %}
+                            <td rowspan="{{ line_output_count }}">{{ slot_type }}</td>
+                                {% do first_row.pop() %}
+                                {% do first_row.append(0) %}
+                            {% endif %}
+                            <td>{{ answer.get(query.id).run_id }}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    {% endif %}
+                    {% for line_output in answer.get(query.id).output.get(slot_type) %}
+                        <tr>
+                            {% if first_row[0] == 1 %}
+                            <td rowspan="{{ line_output_count }}">{{ slot_type }}</td>
+                                {% do first_row.pop() %}
+                                {% do first_row.append(0) %}
+                            {% endif %}
+                            {% if answer_first_row[0] == 1 %}
+                            <td rowspan="{{ answer.get(query.id).output.get(slot_type)|length }}">{{ answer.get(query.id).run_id }}</td>
+                                {% do answer_first_row.pop() %}
+                                {% do answer_first_row.append(0) %}
+                            {% endif %}
+                            <td>
+                                <ul>
+                                    {% for w_p in line_output.wide_provenance %}
+                                    <li>
+                                        {{ w_p.doc_id }}: {{ w_p.html_str }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>{{ line_output.slot_filler }}</td>
+                            <td>
+                                <ul>
+                                    {% for s_p in line_output.slot_filler_prov %}
+                                    <li>
+                                        {{ s_p.doc_id }}: {{ s_p.text }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>{{ line_output.confidence_score }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            {% endfor %}
+        </table>
+    {% endfor %}
+</div>
+</body>
+</html>
