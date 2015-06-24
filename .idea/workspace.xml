@@ -37,14 +37,14 @@
       <file leaf-file-name="ChineseSlotFilling.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/slot_filling/ChineseSlotFilling.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.0951493">
-              <caret line="213" column="33" selection-start-line="213" selection-start-column="33" selection-end-line="213" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.595">
+              <caret line="286" column="8" selection-start-line="286" selection-start-column="8" selection-end-line="286" selection-end-column="8" />
               <folding>
                 <element signature="e#46#55#0" expanded="true" />
                 <element signature="e#3313#3384#0" expanded="false" />
                 <element signature="e#3429#5291#0" expanded="false" />
-                <element signature="e#15451#15457#0" expanded="false" />
-                <element signature="e#15503#15603#0" expanded="false" />
+                <element signature="e#15334#15340#0" expanded="false" />
+                <element signature="e#15386#15486#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -210,8 +210,8 @@
         <option value="$PROJECT_DIR$/src/utils/lucene_search.py" />
         <option value="$PROJECT_DIR$/src/slot_filling/InferenceAnalyzer.py" />
         <option value="$PROJECT_DIR$/data/queries_sample.xml" />
-        <option value="$PROJECT_DIR$/src/slot_filling/ChineseSlotFilling.py" />
         <option value="$PROJECT_DIR$/src/slot_filling/Answer.py" />
+        <option value="$PROJECT_DIR$/src/slot_filling/ChineseSlotFilling.py" />
       </list>
     </option>
   </component>
@@ -709,9 +709,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959184" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32959184" sideWeight="0.49755502" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294621" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294621" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33979592" sideWeight="0.48594132" order="3" side_tool="false" content_ui="tabs" />
@@ -721,9 +721,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925585" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27689487" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27689487" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959184" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39489797" sideWeight="0.5140587" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32959184" sideWeight="0.502445" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -856,8 +856,8 @@
             <element signature="e#46#55#0" expanded="true" />
             <element signature="e#3313#3384#0" expanded="false" />
             <element signature="e#3429#5291#0" expanded="false" />
-            <element signature="e#15451#15457#0" expanded="false" />
-            <element signature="e#15503#15603#0" expanded="false" />
+            <element signature="e#15334#15340#0" expanded="false" />
+            <element signature="e#15386#15486#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -963,8 +963,8 @@
             <element signature="e#46#55#0" expanded="true" />
             <element signature="e#3313#3384#0" expanded="false" />
             <element signature="e#3429#5291#0" expanded="false" />
-            <element signature="e#15451#15457#0" expanded="false" />
-            <element signature="e#15503#15603#0" expanded="false" />
+            <element signature="e#15334#15340#0" expanded="false" />
+            <element signature="e#15386#15486#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1322,14 +1322,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/slot_filling/ChineseSlotFilling.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.0951493">
-          <caret line="213" column="33" selection-start-line="213" selection-start-column="33" selection-end-line="213" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.595">
+          <caret line="286" column="8" selection-start-line="286" selection-start-column="8" selection-end-line="286" selection-end-column="8" />
           <folding>
             <element signature="e#46#55#0" expanded="true" />
             <element signature="e#3313#3384#0" expanded="false" />
             <element signature="e#3429#5291#0" expanded="false" />
-            <element signature="e#15451#15457#0" expanded="false" />
-            <element signature="e#15503#15603#0" expanded="false" />
+            <element signature="e#15334#15340#0" expanded="false" />
+            <element signature="e#15386#15486#0" expanded="false" />
           </folding>
         </state>
       </provider>
