@@ -36,7 +36,7 @@ p = Popen(['python', 'setup.py', 'build'], stdout=PIPE, stderr=PIPE)
 stdout, stderr = p.communicate()
 if stderr:
     print stderr
-    raise
+    exit()
 print('Done')
 
 print('Installing JCC...'),
@@ -44,7 +44,7 @@ p = Popen(['python', 'setup.py', 'install'], stdout=PIPE, stderr=PIPE)
 stdout, stderr = p.communicate()
 if stderr:
     print stderr
-    raise
+    exit()
 print('Done')
 
 
@@ -57,7 +57,7 @@ p = Popen(['make'], stdout=PIPE, stderr=PIPE)
 stdout, stderr = p.communicate()
 if stderr:
     print stderr
-    raise
+    exit()
 print('Done')
 
 print('Installing Pylucene...'),
@@ -65,7 +65,7 @@ p = Popen(['make', 'install'], stdout=PIPE, stderr=PIPE)
 stdout, stderr = p.communicate()
 if stderr:
     print stderr
-    raise
+    exit()
 print('Done')
 
 
