@@ -24,7 +24,7 @@ VERSION = "1.0"
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-path = os.path.realpath(__file__)
+path = os.path.dirname(os.path.realpath(__file__))
 
 # install JCC which is required by Pylucene
 jcc_path = os.path.join(path, 'externals/pylucene-4.10.1-1/jcc')
