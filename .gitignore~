@@ -1,6 +1,8 @@
-data/Lucene_Index/
-data/2014_KBP_Chinese_Source_Corpus_extracted/
-externals/
-.idea/
-.DS_Store
-*.pyc
+*
+!bin/
+!data/dict/
+!data/triggers/
+!data/queries_sample.xml
+!data/queries.xml
+!src/
+!.gitignore

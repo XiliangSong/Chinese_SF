@@ -1,8 +1,8 @@
 *
-
+!bin/
 !data/dict/
 !data/triggers/
 !data/queries_sample.xml
 !data/queries.xml
-!src/
+!RPISlotFilling/
 !.gitignore

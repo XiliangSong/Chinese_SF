@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efe05f1c-b040-4eb0-bdb9-6768675bfb17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPISlotFilling/slot_filling/ChineseSlotFilling.py" afterPath="$PROJECT_DIR$/RPISlotFilling/slot_filling/ChineseSlotFilling.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="efe05f1c-b040-4eb0-bdb9-6768675bfb17" name="Default" comment="" />
     <ignored path="Chinese_SF.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -41,8 +38,8 @@
       <file leaf-file-name="ChineseSlotFilling.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RPISlotFilling/slot_filling/ChineseSlotFilling.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8278302">
-              <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6544811">
+              <caret line="189" column="33" selection-start-line="189" selection-start-column="33" selection-end-line="189" selection-end-column="33" />
               <folding>
                 <element signature="e#46#55#0" expanded="true" />
                 <element signature="e#2185#3005#0" expanded="false" />
@@ -1197,28 +1194,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/cn_sf_result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.2">
-          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RPISlotFilling/utils/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/cn_sf_result.tab">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22801302">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file:///Library/Python/2.7/site-packages/bs4/element.py">
@@ -1449,8 +1429,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RPISlotFilling/slot_filling/ChineseSlotFilling.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8278302">
-          <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6544811">
+          <caret line="189" column="33" selection-start-line="189" selection-start-column="33" selection-end-line="189" selection-end-column="33" />
           <folding>
             <element signature="e#46#55#0" expanded="true" />
             <element signature="e#2185#3005#0" expanded="false" />
