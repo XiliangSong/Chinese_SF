@@ -1,4 +1,4 @@
-*
+/*
 !bin/
 !data/dict/
 !data/triggers/
@@ -9,3 +9,6 @@
 !install.py
 !setup.py
 !.gitignore
+*/*.pyc
+*/.DS_Store
+*/*~
