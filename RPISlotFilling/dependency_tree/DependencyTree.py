@@ -1,6 +1,6 @@
 __author__ = 'boliangzhang'
 
-import pygraphviz as PG
+# import pygraphviz as PG
 
 from RPISlotFilling.dependency_tree.Graph import Graph
 from RPISlotFilling.dependency_tree.Graph import dijsktra
