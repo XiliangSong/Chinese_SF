@@ -1,6 +1,6 @@
 import os
 import sys
-from distutils.core import setup
+from setuptools import setup
 if sys.version_info[0] >= 3:
     from distutils.command.build_py import build_py_2to3 as build_py
     from distutils.command.build_scripts import build_scripts_2to3 as build_scripts
