@@ -1,8 +1,10 @@
 # RPI BLENDER Chinese Slot Filling System
 ---------------------------
 
-This is RPI BLENDER Chinese slot filling system. A brief definition of slot filling: Slot filling aims at collecting from a large-scale multi-source corpus the values (“slot fillers”) for certain attributes (“slot types”) of a query entity, which is a person or some type of organization.[1]
+This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slot filling aims at collecting from a large-scale multi-source corpus the values (“slot fillers”) for certain attributes (“slot types”) of a query entity, which is a person or some type of organization.[1]
 
+## Demo
+* Following KBP slot filling query format, the inputs are queries as well as their type and offset in a particular document.
 
 
 

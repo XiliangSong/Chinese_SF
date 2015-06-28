@@ -9,7 +9,7 @@ from RPISlotFilling.slot_filling.ChineseSlotFilling import ChineseSlotFilling
 if len(sys.argv) != 3:
     print('Incorrect number of arguments.')
     print('ChineseSlotFilling requires 2 arguments:')
-    print('\t1) LDC format slot filling queries.')
+    print('\t1) KBP format slot filling queries.')
     print('\t2) Path to output result and visualization result.')
     exit()
 
