@@ -6,4 +6,6 @@
 !data/queries.xml
 !RPISlotFilling/
 !README.md
+!install.py
+!setup.py
 !.gitignore

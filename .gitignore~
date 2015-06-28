@@ -5,4 +5,5 @@
 !data/queries_sample.xml
 !data/queries.xml
 !RPISlotFilling/
+!README.md
 !.gitignore
