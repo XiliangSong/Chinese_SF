@@ -2,9 +2,9 @@ __author__ = 'boliangzhang'
 
 import pygraphviz as PG
 
-from src.dependency_tree.Graph import Graph
-from src.dependency_tree.Graph import dijsktra
-from src.dependency_tree.Node import Node
+from RPISlotFilling.dependency_tree.Graph import Graph
+from RPISlotFilling.dependency_tree.Graph import dijsktra
+from RPISlotFilling.dependency_tree.Node import Node
 
 
 class DependenceTree(object):

@@ -91,8 +91,6 @@ class Analyzer(object):
             cleaned_doc_end += evidence_offset_beg
         sf_p.beg = self.sf_object.doc_mapping_table[doc_id][cleaned_doc_beg]
         sf_p.end = self.sf_object.doc_mapping_table[doc_id][cleaned_doc_end]
-        sf_p.inner_beg = cleaned_doc_beg
-        sf_p.inner_end = cleaned_doc_end
         sf_p.text = slot_filler
         l.slot_filler_prov = [sf_p]
 

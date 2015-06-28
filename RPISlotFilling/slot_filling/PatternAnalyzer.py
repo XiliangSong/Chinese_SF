@@ -101,7 +101,7 @@ class PatternAnalyzer(Analyzer):
     ########################## organization #########################
     def org_alternate_names(self, slot_type):
         # load china province city list
-        china_province_city = cPickle.load(open('../../data/dict/china_province_city.pkl', 'rb'))
+        china_province_city = cPickle.load(open('data/dict/china_province_city.pkl', 'rb'))
         city_list = []
         for p in china_province_city:
             if p['type'] == 0 and p['name'] != (u'台湾' or u'臺灣'):  # type 0 means 直辖市
@@ -115,13 +115,13 @@ class PatternAnalyzer(Analyzer):
 
         # load china province list
         province_dict = []
-        f = io.open('../../data/dict/china_province_dict', 'r', -1, 'utf-8')
+        f = io.open('data/dict/china_province_dict', 'r', -1, 'utf-8')
         for line in f:
             province_dict.append(line.strip())
 
         # load country list
         country_list = []
-        f = io.open('../../data/dict/country_list', 'r', -1, 'utf-8')
+        f = io.open('data/dict/country_list', 'r', -1, 'utf-8')
         for line in f:
             country_list.append(line.strip())
 
@@ -188,7 +188,7 @@ class PatternAnalyzer(Analyzer):
     def org_subsidiaries(self, slot_type):
         line_outputs = []
 
-        f = io.open('../../data/trigger_word/org_parentchildren.txt', 'r', -1, 'utf-8')
+        f = io.open('data/trigger_word/org_parentchildren.txt', 'r', -1, 'utf-8')
         trigger_word = []
         for line in f:
             trigger_word.append(line.strip())
@@ -209,15 +209,15 @@ class PatternAnalyzer(Analyzer):
         return line_outputs
 
     def org_country_of_headquarters(self, slot_type):
-        line_outputs = self.org_headquarters(self, slot_type)
+        line_outputs = self.org_headquarters(slot_type)
         return line_outputs
 
     def org_stateorprovince_of_headquarters(self, slot_type):
-        line_outputs = self.org_headquarters(self, slot_type)
+        line_outputs = self.org_headquarters(slot_type)
         return line_outputs
 
     def org_city_of_headquarters(self, slot_type):
-        line_outputs = self.org_headquarters(self, slot_type)
+        line_outputs = self.org_headquarters(slot_type)
         return line_outputs
 
     ########################## utilities #########################
@@ -256,17 +256,17 @@ class PatternAnalyzer(Analyzer):
         gpe_list = []
         if 'country' in slot_type:
             # load country list
-            f = io.open('../../data/dict/country_list', 'r', -1, 'utf-8')
+            f = io.open('data/dict/country_list', 'r', -1, 'utf-8')
             for line in f:
                 gpe_list.append(line.strip())
         elif 'state' in slot_type:
             # load province list
-            f = io.open('../../data/dict/china_province_dict', 'r', -1, 'utf-8')
+            f = io.open('data/dict/china_province_dict', 'r', -1, 'utf-8')
             for line in f:
                 gpe_list.append(line.strip())
         elif 'city' in slot_type:
             # load city list
-            china_province_city = cPickle.load(open('../../data/dict/china_province_city.pkl', 'rb'))
+            china_province_city = cPickle.load(open('data/dict/china_province_city.pkl', 'rb'))
             for p in china_province_city:
                 if p['type'] == 0 and p['name'] != (u'台湾' or u'臺灣'):  # type 0 means 直辖市
                     continue

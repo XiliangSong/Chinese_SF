@@ -15,7 +15,7 @@ from org.apache.lucene.store import SimpleFSDirectory
 from org.apache.lucene.search import IndexSearcher
 from org.apache.lucene.util import Version
 
-# from src.utils.load_sf_query import load_sf_query
+# from RPISlotFilling.utils.load_sf_query import load_sf_query
 
 
 """

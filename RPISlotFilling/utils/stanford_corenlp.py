@@ -4,7 +4,7 @@ import os
 import shutil
 import io
 
-from corenlp import batch_parse
+from RPISlotFilling.lib.corenlp.corenlp import batch_parse
 
 
 def stanford_parser(sentences, proc_id=0):

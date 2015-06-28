@@ -7,7 +7,7 @@ from jinja2 import Environment, FileSystemLoader
 
 
 def visualizer(queries, sf_answers, path):
-    env = Environment(loader=FileSystemLoader(['src/visualization/']),
+    env = Environment(loader=FileSystemLoader(['RPISlotFilling/visualization/']),
                       extensions=['jinja2.ext.do'])
     env.filters['count_l'] = count_l
 
@@ -136,8 +136,8 @@ def eval_development():
     ldc_answer = eval_answer
     system_answer = empty_system_answer(queries)
 
-    env = Environment(loader=FileSystemLoader(['/Users/boliangzhang/Documents/Phd/Chinese_Slot_Filling/src/error_analysis/',
-                                               '/home/zhangb8/Chinese_Slot_Filling/src/error_analysis/']))
+    env = Environment(loader=FileSystemLoader(['/Users/boliangzhang/Documents/Phd/Chinese_Slot_Filling/RPISlotFilling/error_analysis/',
+                                               '/home/zhangb8/Chinese_Slot_Filling/RPISlotFilling/error_analysis/']))
     env.filters['dict'] = _dict
     env.filters['substr'] = substr
     env.filters['query_snapshot'] = query_snapshot

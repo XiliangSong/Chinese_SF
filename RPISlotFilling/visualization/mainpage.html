@@ -45,10 +45,16 @@
         </p>
         {% set slot_types = sf_answers[0].get(query.id).output.keys() %}
         <table style="width:100%">
-            <tr>
+            <>
                 <th>Slot Name</th>
                 <th>Run ID</th>
-                <th>Wide Provenance</th>
+                <th>
+                    Wide Provenance (
+                    <small><font style="BACKGROUND-COLOR: #FF6666">query name</font></small>
+                    <small><font style="BACKGROUND-COLOR: #99FF99">trigger</font></small>
+                    <small><font style="BACKGROUND-COLOR: #99CCFF">slot filler</font></small>
+                    )
+                </th>
                 <th>Slot Filler</th>
                 <th>Slot Filler Provenance</th>
                 <th>Confidence Score</th>

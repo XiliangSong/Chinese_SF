@@ -8,13 +8,13 @@ import jianfan
 import operator
 
 from collections import OrderedDict
-from src.utils.lucene_search import init_lucene_search
-from src.utils.lucene_search import search
-# from src.src_doc_processing.chinese_sentence_chunking import chinese_sent_tokenizer
+from RPISlotFilling.utils.lucene_search import init_lucene_search
+from RPISlotFilling.utils.lucene_search import search
+# from RPISlotFilling.src_doc_processing.chinese_sentence_chunking import chinese_sent_tokenizer
 from Answer import LineOutput
 from Answer import Provenance
-# from src.utils.load_sf_src_doc import load_sf_src_doc
-from src.utils.string_clean import remove_space_linebreak
+# from RPISlotFilling.utils.load_sf_src_doc import load_sf_src_doc
+from RPISlotFilling.utils.string_clean import remove_space_linebreak
 
 from Analyzer import Analyzer
 
@@ -77,10 +77,10 @@ class InferenceAnalyzer(Analyzer):
 
     ######################### organization #########################
     def org_country_of_headquarters(self, slot_type):
-        return self.country(self, slot_type, 'org:stateorprovince_of_headquarters')
+        return self.country(slot_type, 'org:stateorprovince_of_headquarters')
 
     def org_stateorprovince_of_headquarters(self, slot_type):
-        return self.stateorprovince(self, slot_type, 'org:city_of_headquarters')
+        return self.stateorprovince(slot_type, 'org:city_of_headquarters')
 
     def org_members(self, slot_type):
         # if not query_system_answer.output['org:members'][0].slot_filler:
@@ -124,10 +124,10 @@ class InferenceAnalyzer(Analyzer):
         return []
 
     def org_date_founded(self, slot_type):
-        return self.date(self, slot_type)
+        return self.date(slot_type)
 
     def org_date_dissolved(self, slot_type):
-        return self.date(self, slot_type)
+        return self.date(slot_type)
 
     ########################## utilities #########################
     def country(self, slot_type, evidence_slot_type):

@@ -27,17 +27,15 @@ class Answer(object):
             output = self.output[slot_type]
             for line_output in output:
                 for w_p in line_output.wide_provenance:
-                    replace_d = dict()
+                    replace_d = OrderedDict()
 
-                    # highlight slot filler
-                    beg = line_output.slot_filler_prov[0].inner_beg  # slot filler innner beg
-                    end = line_output.slot_filler_prov[0].inner_end  # slot filler inner end
-                    if beg == '' and end == '':  # if there is no inner beg and end, just search for index
+                    if line_output.slot_filler in w_p.text:
+                        # highlight slot filler
                         beg = w_p.text.find(line_output.slot_filler)
                         end = beg+len(line_output.slot_filler)+1
 
-                    replace_d[beg] = ('<font style="BACKGROUND-COLOR: #99CCFF">'+line_output.slot_filler+'</font>',
-                                      len(line_output.slot_filler))
+                        replace_d[beg] = ('<font style="BACKGROUND-COLOR: #99CCFF">'+line_output.slot_filler+'</font>',
+                                          len(line_output.slot_filler))
 
                     # highlight nearest query name
                     if self.query.name in w_p.text:

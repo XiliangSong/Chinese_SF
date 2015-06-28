@@ -14,8 +14,7 @@ import multiprocessing
 from xml.etree import ElementTree as ET
 from collections import OrderedDict
 
-from corenlp import batch_parse
-from src.utils.stanford_corenlp import stanford_parser
+from RPISlotFilling.lib.corenlp.corenlp import batch_parse
 
 from Query import Query
 from Answer import Answer
@@ -23,10 +22,10 @@ from Evidence import Evidence
 from DependencyAnalyzer import DependencyAnalyzer
 from PatternAnalyzer import PatternAnalyzer
 from InferenceAnalyzer import InferenceAnalyzer
-from src.utils.string_clean import remove_xml_tag, remove_space_linebreak, remove_doc_noise
-from src.visualization.visualizer import visualizer
-from src.utils.lucene_search import init_lucene_search
-from src.utils.lucene_search import search
+from RPISlotFilling.utils.string_clean import remove_xml_tag, remove_space_linebreak, remove_doc_noise
+from RPISlotFilling.visualization.visualizer import visualizer
+from RPISlotFilling.utils.lucene_search import init_lucene_search
+from RPISlotFilling.utils.lucene_search import search
 
 
 class ChineseSlotFilling(object):
@@ -170,25 +169,25 @@ class ChineseSlotFilling(object):
     # evidences are the sentences that contain both query and trigger word of each slot type
     def evidence_extaction(self):
         # ************* batch segment long article ************* #
-        start = time.time()
-        if os.path.exists('data/.tmp/'):
-            shutil.rmtree('data/.tmp')
-        os.makedirs('data/.tmp/')  # create a temperal dir for parsing large paragraphs
-        for doc_id in self.cleaned_docs:
-            f = io.open(os.path.join('data/.tmp', doc_id), 'w', -1, 'utf-8')
-            f.write(self.cleaned_docs[doc_id])
-            f.close()
-        segmenter_result = list(batch_parse('data/.tmp/',
-                                            os.path.join(self.CN_SF_PATH,
-                                                         'externals/stanford-corenlp-full-2014-08-27/'),
-                                            properties="StanfordCoreNLP-chinese.Segmenter.properties",
-                                            ))
-        for r in segmenter_result:
-            self.segmented_docs[r['file_name']] = r['sentences']
-        print('segmenting time cost '+str(time.time()-start))
-
-        # cpickle for development
-        cPickle.dump(self.segmented_docs, open('data/segmented_docs.pkl', 'wb'))
+        # start = time.time()
+        # if os.path.exists('data/.tmp/'):
+        #     shutil.rmtree('data/.tmp')
+        # os.makedirs('data/.tmp/')  # create a temperal dir for parsing large paragraphs
+        # for doc_id in self.cleaned_docs:
+        #     f = io.open(os.path.join('data/.tmp', doc_id), 'w', -1, 'utf-8')
+        #     f.write(self.cleaned_docs[doc_id])
+        #     f.close()
+        # segmenter_result = list(batch_parse('data/.tmp/',
+        #                                     os.path.join(self.CN_SF_PATH,
+        #                                                  'externals/stanford-corenlp-full-2014-08-27/'),
+        #                                     properties="StanfordCoreNLP-chinese.Segmenter.properties",
+        #                                     ))
+        # for r in segmenter_result:
+        #     self.segmented_docs[r['file_name']] = r['sentences']
+        # print('segmenting time cost '+str(time.time()-start))
+        #
+        # # cpickle for development
+        # cPickle.dump(self.segmented_docs, open('data/segmented_docs.pkl', 'wb'))
 
         self.segmented_docs = cPickle.load(open('data/segmented_docs.pkl', 'rb'))
 
@@ -234,8 +233,6 @@ class ChineseSlotFilling(object):
                             # compare triggers to words by segmentation, might affected by segmentation errors
                             if t not in seg_sent_text:
                                 continue
-                            # if query and trigger both appear in the sentence, generate its parsing result.
-                            # sent_parsing_result = self.stanford_parser.raw_parse(''.join(seg_sent_text))['sentences']
                             evidences[slot_type].append(Evidence(doc_id, query.id, t, sent_text, sent_id))
                             sent_to_parse[sent_id] = sent_text  # add sentence and do parallel parsing later.
 
@@ -260,29 +257,29 @@ class ChineseSlotFilling(object):
             self.evidence[query.id] = evidences
 
         # *************** parallel parsing ****************** #
-        def chunkIt(seq, num):
-            avg = len(seq) / float(num)
-            out = []
-            last = 0.0
-
-            while last < len(seq):
-                out.append(seq[int(last):int(last + avg)])
-                last += avg
-
-            return out
-
-        process_num = 2
-        p = multiprocessing.Pool(processes=process_num)
-        chunked_sent = [dict(item) for item in chunkIt(sent_to_parse.items(), process_num)]
-        mp_result = [p.apply_async(stanford_parser,
-                                   args=(chunked_sent[i], str(i))) for i in range(process_num)]
-        mp_result = [p.get() for p in mp_result]
-        sent_parsing_result = {}
-        for r in mp_result:
-            sent_parsing_result.update(r)
-
-        # cpickle for development
-        cPickle.dump(sent_parsing_result, open('data/sent_parsing_result.pkl', 'wb'))
+        # def chunkIt(seq, num):
+        #     avg = len(seq) / float(num)
+        #     out = []
+        #     last = 0.0
+        #
+        #     while last < len(seq):
+        #         out.append(seq[int(last):int(last + avg)])
+        #         last += avg
+        #
+        #     return out
+        #
+        # process_num = 2
+        # p = multiprocessing.Pool(processes=process_num)
+        # chunked_sent = [dict(item) for item in chunkIt(sent_to_parse.items(), process_num)]
+        # mp_result = [p.apply_async(stanford_parser,
+        #                            args=(chunked_sent[i], str(i))) for i in range(process_num)]
+        # mp_result = [p.get() for p in mp_result]
+        # sent_parsing_result = {}
+        # for r in mp_result:
+        #     sent_parsing_result.update(r)
+        #
+        # # cpickle for development
+        # cPickle.dump(sent_parsing_result, open('data/sent_parsing_result.pkl', 'wb'))
 
         sent_parsing_result = cPickle.load(open('data/sent_parsing_result.pkl', 'rb'))
 
@@ -477,20 +474,30 @@ class ChineseSlotFilling(object):
 
                 result = []
                 for slot_filler in unique_slot_filler:
-                    result.append(unique_slot_filler[slot_filler][0])
+                    for line_output in unique_slot_filler[slot_filler]:
+                        if len(line_output.wide_provenance) > 1:
+                            result.append(line_output)
+                            break
+                    else:
+                        result.append(unique_slot_filler[slot_filler][0])
 
                 line_outputs = result
                 if slot_type not in ["per:alternate_names", "per:origin", "per:countries_of_residence",
-                                 "per:statesorprovinces_of_residence", "per:cities_of_residence",
-                                 "per:schools_attended", "per:title", "per:employee_or_member_of",
-                                 "per:children", "per:parents", "per:siblings", "per:other_family",
-                                 "org:alternate_names", "org:top_members_employees", "org:subsidiaries",
-                                 "org:parents", "org:founded_by", "org:shareholders"]:
-                    line_outputs = line_outputs[:1]
+                                     "per:statesorprovinces_of_residence", "per:cities_of_residence",
+                                     "per:schools_attended", "per:title", "per:employee_or_member_of",
+                                     "per:children", "per:parents", "per:siblings", "per:other_family",
+                                     "org:alternate_names", "org:top_members_employees", "org:subsidiaries",
+                                     "org:parents", "org:founded_by", "org:shareholders"]:
+                    for line_output in line_outputs:
+                        if len(line_output.wide_provenance) > 1:
+                            line_outputs = [line_output]
+                            break
+                    else:
+                        line_outputs = line_outputs[:1]
 
                 answer.output[slot_type] = line_outputs
 
-    def run(self, query_file_path):
+    def get_answer(self, query_file_path):
         # load queries
         self.load_query(query_file_path)
 
@@ -575,7 +582,7 @@ class ChineseSlotFilling(object):
 if __name__ == "__main__":
     cn_sf = ChineseSlotFilling()
 
-    cn_sf.run('data/queries_sample.xml')
+    cn_sf.get_answer('data/queries_sample.xml')
 
     cn_sf.export_answer('data/cn_sf_result.tab')
 

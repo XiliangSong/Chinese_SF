@@ -9,7 +9,7 @@ import cPickle
 import datetime
 import copy
 
-from src.dependency_tree.DependencyTree import DependenceTree
+from RPISlotFilling.dependency_tree.DependencyTree import DependenceTree
 
 from Analyzer import Analyzer
 
