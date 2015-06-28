@@ -66,6 +66,7 @@ print('Done')
 
 
 # python setup to install dependency packages
+os.chdir(path)
 setup(
     name=NAME,
     version=VERSION,
