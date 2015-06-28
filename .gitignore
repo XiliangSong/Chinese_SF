@@ -1,10 +1,10 @@
 *
-!bin/
-!data/dict/
-!data/triggers/
+!bin/*
+!data/dict/*
+!data/triggers/*
 !data/queries_sample.xml
 !data/queries.xml
-!RPISlotFilling/
+!RPISlotFilling/*
 !README.md
 !install.py
 !setup.py
