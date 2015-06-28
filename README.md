@@ -1,5 +1,12 @@
-# A Python wrapper for the Java Stanford Core NLP tools
+# RPI BLENDER Chinese Slot Filling System
 ---------------------------
+
+This is RPI BLENDER Chinese slot filling system. A brief definition of slot filling: Slot filling aims at collecting from a large-scale multi-source corpus the values (“slot fillers”) for certain attributes (“slot types”) of a query entity, which is a person or some type of organization.[1]
+
+
+
+
+[1] Dian Yu, Hongzhao Huang, Taylor Cassidy, Heng Ji, Chi Wang, Shi Zhi, Jiawei Han, Clare Voss and Malik Magdon-Ismail. The Wisdom of Minority: Unsupervised Slot Filling Validation based on Multi-dimensional Truth-Finding. (COLING 2014)
 
 This is a fork of Dustin Smith's [stanford-corenlp-python](https://github.com/dasmith/stanford-corenlp-python), a Python interface to [Stanford CoreNLP](http://nlp.stanford.edu/software/corenlp.shtml). It can either use as a python package, or run as a JSON-RPC server.
 

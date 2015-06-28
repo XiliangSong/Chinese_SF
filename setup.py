@@ -79,7 +79,7 @@ setup(
         "xmltodict >= 0.4.6",
         "jianfan >= 0.0.2",
         "jinja2 >= 2.7.3",
-
+        "python-Levenshtein >= 0.12.0"
     ],
     # data_files = [
     #     ('corenlp', ["default.properties"]),
