@@ -15,6 +15,7 @@ from xml.etree import ElementTree as ET
 from collections import OrderedDict
 
 from RPISlotFilling.lib.corenlp.corenlp import batch_parse
+from RPISlotFilling.utils.stanford_corenlp import stanford_parser
 
 from Query import Query
 from Answer import Answer
@@ -169,25 +170,25 @@ class ChineseSlotFilling(object):
     # evidences are the sentences that contain both query and trigger word of each slot type
     def evidence_extaction(self):
         # ************* batch segment long article ************* #
-        # start = time.time()
-        # if os.path.exists('data/.tmp/'):
-        #     shutil.rmtree('data/.tmp')
-        # os.makedirs('data/.tmp/')  # create a temperal dir for parsing large paragraphs
-        # for doc_id in self.cleaned_docs:
-        #     f = io.open(os.path.join('data/.tmp', doc_id), 'w', -1, 'utf-8')
-        #     f.write(self.cleaned_docs[doc_id])
-        #     f.close()
-        # segmenter_result = list(batch_parse('data/.tmp/',
-        #                                     os.path.join(self.CN_SF_PATH,
-        #                                                  'externals/stanford-corenlp-full-2014-08-27/'),
-        #                                     properties="StanfordCoreNLP-chinese.Segmenter.properties",
-        #                                     ))
-        # for r in segmenter_result:
-        #     self.segmented_docs[r['file_name']] = r['sentences']
-        # print('segmenting time cost '+str(time.time()-start))
-        #
-        # # cpickle for development
-        # cPickle.dump(self.segmented_docs, open('data/segmented_docs.pkl', 'wb'))
+        start = time.time()
+        if os.path.exists('data/.tmp/'):
+            shutil.rmtree('data/.tmp')
+        os.makedirs('data/.tmp/')  # create a temperal dir for parsing large paragraphs
+        for doc_id in self.cleaned_docs:
+            f = io.open(os.path.join('data/.tmp', doc_id), 'w', -1, 'utf-8')
+            f.write(self.cleaned_docs[doc_id])
+            f.close()
+        segmenter_result = list(batch_parse('data/.tmp/',
+                                            os.path.join(self.CN_SF_PATH,
+                                                         'externals/stanford-corenlp-full-2014-08-27/'),
+                                            properties="StanfordCoreNLP-chinese.Segmenter.properties",
+                                            ))
+        for r in segmenter_result:
+            self.segmented_docs[r['file_name']] = r['sentences']
+        print('segmenting time cost '+str(time.time()-start))
+
+        # cpickle for development
+        cPickle.dump(self.segmented_docs, open('data/segmented_docs.pkl', 'wb'))
 
         self.segmented_docs = cPickle.load(open('data/segmented_docs.pkl', 'rb'))
 
@@ -257,29 +258,29 @@ class ChineseSlotFilling(object):
             self.evidence[query.id] = evidences
 
         # *************** parallel parsing ****************** #
-        # def chunkIt(seq, num):
-        #     avg = len(seq) / float(num)
-        #     out = []
-        #     last = 0.0
-        #
-        #     while last < len(seq):
-        #         out.append(seq[int(last):int(last + avg)])
-        #         last += avg
-        #
-        #     return out
-        #
-        # process_num = 2
-        # p = multiprocessing.Pool(processes=process_num)
-        # chunked_sent = [dict(item) for item in chunkIt(sent_to_parse.items(), process_num)]
-        # mp_result = [p.apply_async(stanford_parser,
-        #                            args=(chunked_sent[i], str(i))) for i in range(process_num)]
-        # mp_result = [p.get() for p in mp_result]
-        # sent_parsing_result = {}
-        # for r in mp_result:
-        #     sent_parsing_result.update(r)
-        #
-        # # cpickle for development
-        # cPickle.dump(sent_parsing_result, open('data/sent_parsing_result.pkl', 'wb'))
+        def chunkIt(seq, num):
+            avg = len(seq) / float(num)
+            out = []
+            last = 0.0
+
+            while last < len(seq):
+                out.append(seq[int(last):int(last + avg)])
+                last += avg
+
+            return out
+
+        process_num = 2
+        p = multiprocessing.Pool(processes=process_num)
+        chunked_sent = [dict(item) for item in chunkIt(sent_to_parse.items(), process_num)]
+        mp_result = [p.apply_async(stanford_parser,
+                                   args=(chunked_sent[i], str(i))) for i in range(process_num)]
+        mp_result = [p.get() for p in mp_result]
+        sent_parsing_result = {}
+        for r in mp_result:
+            sent_parsing_result.update(r)
+
+        # cpickle for development
+        cPickle.dump(sent_parsing_result, open('data/sent_parsing_result.pkl', 'wb'))
 
         sent_parsing_result = cPickle.load(open('data/sent_parsing_result.pkl', 'rb'))
 

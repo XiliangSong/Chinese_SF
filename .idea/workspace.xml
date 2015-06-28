@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efe05f1c-b040-4eb0-bdb9-6768675bfb17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/externals/corenlp-python/corenlp/corenlp.py" afterPath="$PROJECT_DIR$/externals/corenlp-python/corenlp/corenlp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RPISlotFilling/slot_filling/ChineseSlotFilling.py" afterPath="$PROJECT_DIR$/RPISlotFilling/slot_filling/ChineseSlotFilling.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Chinese_SF.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,7 +19,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Chinese_SF$ChineseSlotFilling.coverage" NAME="ChineseSlotFilling Coverage Results" MODIFIED="1435179266132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/slot_filling" />
     <SUITE FILE_PATH="coverage/Chinese_SF$visualizer.coverage" NAME="visualizer Coverage Results" MODIFIED="1434660848396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/visualization" />
-    <SUITE FILE_PATH="coverage/Chinese_SF$ChineseSlotFilling__1_.coverage" NAME="ChineseSlotFilling (1) Coverage Results" MODIFIED="1435504239674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RPISlotFilling/slot_filling" />
+    <SUITE FILE_PATH="coverage/Chinese_SF$ChineseSlotFilling__1_.coverage" NAME="ChineseSlotFilling (1) Coverage Results" MODIFIED="1435504952878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RPISlotFilling/slot_filling" />
     <SUITE FILE_PATH="coverage/Chinese_SF$Answer.coverage" NAME="Answer Coverage Results" MODIFIED="1435177203669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/slot_filling" />
     <SUITE FILE_PATH="coverage/Chinese_SF$InferenceAnalyzer.coverage" NAME="InferenceAnalyzer Coverage Results" MODIFIED="1434743960688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/slot_filling" />
   </component>
@@ -40,25 +41,27 @@
       <file leaf-file-name="ChineseSlotFilling.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RPISlotFilling/slot_filling/ChineseSlotFilling.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43160376">
-              <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.8278302">
+              <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
               <folding>
                 <element signature="e#46#55#0" expanded="true" />
-                <element signature="e#3329#3400#0" expanded="false" />
-                <element signature="e#3445#5307#0" expanded="false" />
-                <element signature="e#15240#15246#0" expanded="false" />
-                <element signature="e#15292#15392#0" expanded="false" />
+                <element signature="e#2185#3005#0" expanded="false" />
+                <element signature="e#3082#3352#0" expanded="false" />
+                <element signature="e#3395#3466#0" expanded="false" />
+                <element signature="e#3511#5373#0" expanded="false" />
+                <element signature="e#5417#7356#0" expanded="false" />
+                <element signature="e#12596#12814#0" expanded="false" />
+                <element signature="e#15187#15193#0" expanded="false" />
+                <element signature="e#15239#15339#0" expanded="false" />
+                <element signature="e#15399#19709#0" expanded="false" />
+                <element signature="e#19746#20044#0" expanded="false" />
+                <element signature="e#20081#20376#0" expanded="false" />
+                <element signature="e#20414#20715#0" expanded="false" />
+                <element signature="e#20756#22709#0" expanded="false" />
+                <element signature="e#22762#23313#0" expanded="false" />
+                <element signature="e#23358#25440#0" expanded="false" />
+                <element signature="e#25481#25624#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDict.py" pinned="false" current-in-tab="false">
-        <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/UserDict.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -89,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/RPISlotFilling/utils/stanford_corenlp.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
               <folding>
                 <element signature="e#29#38#0" expanded="true" />
               </folding>
@@ -350,46 +353,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="externals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Chinese_SF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Chinese_SF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="externals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="corenlp-python" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Chinese_SF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Chinese_SF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="externals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="corenlp-python" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="corenlp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -862,7 +825,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294621" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919708" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294621" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33941606" sideWeight="0.48349634" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33941606" sideWeight="0.48767886" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -871,7 +834,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28139904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959184" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959184" sideWeight="0.50488997" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33941606" sideWeight="0.5123212" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -914,22 +877,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/RPISlotFilling/slot_filling/ChineseSlotFilling.py</url>
-          <line>179</line>
+          <line>180</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/RPISlotFilling/slot_filling/ChineseSlotFilling.py</url>
-          <line>171</line>
+          <line>172</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/RPISlotFilling/slot_filling/ChineseSlotFilling.py</url>
-          <line>492</line>
+          <line>493</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/RPISlotFilling/slot_filling/ChineseSlotFilling.py</url>
-          <line>483</line>
+          <line>484</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
@@ -1065,10 +1028,22 @@
           <caret line="53" column="25" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="25" />
           <folding>
             <element signature="e#46#55#0" expanded="true" />
-            <element signature="e#3329#3400#0" expanded="false" />
-            <element signature="e#3445#5307#0" expanded="false" />
-            <element signature="e#15240#15246#0" expanded="false" />
-            <element signature="e#15292#15392#0" expanded="false" />
+            <element signature="e#2185#3005#0" expanded="false" />
+            <element signature="e#3082#3352#0" expanded="false" />
+            <element signature="e#3395#3466#0" expanded="false" />
+            <element signature="e#3511#5373#0" expanded="false" />
+            <element signature="e#5417#7356#0" expanded="false" />
+            <element signature="e#12596#12814#0" expanded="false" />
+            <element signature="e#15187#15193#0" expanded="false" />
+            <element signature="e#15239#15339#0" expanded="false" />
+            <element signature="e#15399#19709#0" expanded="false" />
+            <element signature="e#19746#20044#0" expanded="false" />
+            <element signature="e#20081#20376#0" expanded="false" />
+            <element signature="e#20414#20715#0" expanded="false" />
+            <element signature="e#20756#22709#0" expanded="false" />
+            <element signature="e#22762#23313#0" expanded="false" />
+            <element signature="e#23358#25440#0" expanded="false" />
+            <element signature="e#25481#25624#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1397,13 +1372,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/externals/corenlp-python/corenlp/__main__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.055263158">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RPISlotFilling/lib/corenlp/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1415,14 +1383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/externals/corenlp-python/corenlp/corenlp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60431653">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1451,16 +1411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RPISlotFilling/utils/stanford_corenlp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding>
-            <element signature="e#29#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RPISlotFilling/visualization/visualizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1481,22 +1431,44 @@
     </entry>
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/UserDict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.33333334">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RPISlotFilling/utils/stanford_corenlp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding>
+            <element signature="e#29#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RPISlotFilling/slot_filling/ChineseSlotFilling.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43160376">
-          <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.8278302">
+          <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
           <folding>
             <element signature="e#46#55#0" expanded="true" />
-            <element signature="e#3329#3400#0" expanded="false" />
-            <element signature="e#3445#5307#0" expanded="false" />
-            <element signature="e#15240#15246#0" expanded="false" />
-            <element signature="e#15292#15392#0" expanded="false" />
+            <element signature="e#2185#3005#0" expanded="false" />
+            <element signature="e#3082#3352#0" expanded="false" />
+            <element signature="e#3395#3466#0" expanded="false" />
+            <element signature="e#3511#5373#0" expanded="false" />
+            <element signature="e#5417#7356#0" expanded="false" />
+            <element signature="e#12596#12814#0" expanded="false" />
+            <element signature="e#15187#15193#0" expanded="false" />
+            <element signature="e#15239#15339#0" expanded="false" />
+            <element signature="e#15399#19709#0" expanded="false" />
+            <element signature="e#19746#20044#0" expanded="false" />
+            <element signature="e#20081#20376#0" expanded="false" />
+            <element signature="e#20414#20715#0" expanded="false" />
+            <element signature="e#20756#22709#0" expanded="false" />
+            <element signature="e#22762#23313#0" expanded="false" />
+            <element signature="e#23358#25440#0" expanded="false" />
+            <element signature="e#25481#25624#0" expanded="false" />
           </folding>
         </state>
       </provider>
