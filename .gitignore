@@ -1,4 +1,5 @@
 data/
 externals/
 .idea/
-**/.DS_Store
+.DS_Store
+*.pyc
