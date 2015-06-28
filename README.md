@@ -5,6 +5,26 @@ This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slo
 
 ## Demo
 * Following KBP slot filling query format, the inputs are queries as well as their type and offset in a particular document.
+'''
+<?xml version="1.0" encoding="utf-8"?>
+<kbpslotfill>
+  <query id="SF14_CMN_TRAINING_001">
+    <name>郭全宝</name>
+    <enttype>PER</enttype>
+    <docid>cmn-NG-4-76762-9532908</docid>
+    <beg>2536</beg>
+    <end>2538</end>
+  </query>
+  <query id="SF14_CMN_TRAINING_006">
+    <name>华泰财产保险股份有限公司</name>
+    <enttype>ORG</enttype>
+    <docid>CNS_CMN_20100325.1032</docid>
+    <beg>478</beg>
+    <end>489</end>
+  </query>
+</kbpslotfill>
+'''
+* Outputs are KBP slot filling '.tab' file and HTML file.
 
 
 
