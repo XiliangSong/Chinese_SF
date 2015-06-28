@@ -1,5 +1,6 @@
 import os
 import sys
+from subprocess import Popen, PIPE
 from setuptools import setup
 if sys.version_info[0] >= 3:
     from distutils.command.build_py import build_py_2to3 as build_py
@@ -23,6 +24,52 @@ VERSION = "1.0"
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
+path = os.path.realpath(__file__)
+
+# install JCC which is required by Pylucene
+jcc_path = os.path.join(path, 'externals/pylucene-4.10.1-1/jcc')
+
+os.chdir(jcc_path)
+
+print('Building JCC...'),
+p = Popen(['python', 'setup.py', 'build'], stdout=PIPE, stderr=PIPE)
+stdout, stderr = p.communicate()
+if stderr:
+    print stderr
+    raise
+print('Done')
+
+print('Installing JCC...'),
+p = Popen(['python', 'setup.py', 'install'], stdout=PIPE, stderr=PIPE)
+stdout, stderr = p.communicate()
+if stderr:
+    print stderr
+    raise
+print('Done')
+
+
+# install pylucene
+pylucene_path = os.path.join(path, 'externals/pylucene-4.10.1-1')
+os.chdir(pylucene_path)
+
+print('Building Pylucene...'),
+p = Popen(['make'], stdout=PIPE, stderr=PIPE)
+stdout, stderr = p.communicate()
+if stderr:
+    print stderr
+    raise
+print('Done')
+
+print('Installing Pylucene...'),
+p = Popen(['make', 'install'], stdout=PIPE, stderr=PIPE)
+stdout, stderr = p.communicate()
+if stderr:
+    print stderr
+    raise
+print('Done')
+
+
+# python setup to install dependency packages
 setup(
     name=NAME,
     version=VERSION,
