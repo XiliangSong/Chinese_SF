@@ -31,10 +31,10 @@ This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slo
 ## How To Install
 1. Clone the project.
 2. Requirements:  
-	JDK 7 (1.7) or higher.  
-	Ant  
-	Python 2.7
-3. Environment variables setting:
+*   JDK 7 (1.7) or higher.  
+*   Ant  
+*   Python 2.7
+3. Environment variables setting:  
 	a. Pylucene requires ant. If ant is not at '/usr/bin/ant', please go to 'externals/pylucene-4.10.1-1/Makefile' and change 'ANT' to where you installed ant.  
 	b. Default python path is '/usr/bin/python', if you are using Python virtual environment or you installed python in other directory, please go to 'externals/pylucene-4.10.1-1/Makefile' and change 'PREFIX_PYTHON' to directory of your python or python virtual environment.
 
