@@ -3,8 +3,10 @@
 
 This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slot filling aims at collecting from a large-scale multi-source corpus the values (“slot fillers”) for certain attributes (“slot types”) of a query entity, which is a person or some type of organization.[1]
 
+[1] Dian Yu, Hongzhao Huang, Taylor Cassidy, Heng Ji, Chi Wang, Shi Zhi, Jiawei Han, Clare Voss and Malik Magdon-Ismail. The Wisdom of Minority: Unsupervised Slot Filling Validation based on Multi-dimensional Truth-Finding. (COLING 2014)
+
 ## Example
-* Following KBP slot filling query format, the inputs are queries as well as their type and offset in a particular document.
+* The system takes KBP slot filling query format xml file as input.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <kbpslotfill>
@@ -26,18 +28,17 @@ This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slo
 ```
 * Outputs are KBP slot filling '.tab' file and HTML file.
 
-
 ## How To Install
-1) Clone the project.
-2) Requirements:
+1. Clone the project.<br\>
+2. Requirements:<br\>
 	JDK 7 (1.7) or higher.
 	Ant
 	Python 2.7
-3) Environment variables setting:
+3. Environment variables setting:
 	a) Pylucene requires ant. If ant is not at '/usr/bin/ant', please go to 'externals/pylucene-4.10.1-1/Makefile' and change 'ANT' to where you installed ant.
 	b) Default python path is '/usr/bin/python', if you are using Python virtual environment or you installed python in other directory, please go to 'externals/pylucene-4.10.1-1/Makefile' and change 'PREFIX_PYTHON' to directory of your python or python virtual environment.
 
-[1] Dian Yu, Hongzhao Huang, Taylor Cassidy, Heng Ji, Chi Wang, Shi Zhi, Jiawei Han, Clare Voss and Malik Magdon-Ismail. The Wisdom of Minority: Unsupervised Slot Filling Validation based on Multi-dimensional Truth-Finding. (COLING 2014)
+
 
 
 ## License
