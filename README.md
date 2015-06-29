@@ -48,7 +48,7 @@ This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slo
 
 ## License
 
-RPI BLENDER Chinese Slot Filling is licensed under the GNU General Public License (v2 or later). Note that this is the /full/ GPL, which allows many free uses, but not its use in distributed proprietary software.
+This work was supported by the US ARL  NS-CTA  No.  W911NF-09-2-0053,  DARPA DEFT No. FA8750-13-2-0041, NSF Awards IIS-1523198,  IIS-1017362, IIS-1320617, IIS-1354329 and  HDTRA1-10-1-0120, gift awards from IBM,  Google,  Disney  and  Bosch.  The  views  and conclusions contained in this document are those of the  authors  and  should  not  be  interpreted  as  representing  the  official  policies,  either  expressed  or implied,  of  the  U.S.  Government.   The  U.S. Government  is  authorized  to  reproduce  and  distribute reprints  for  Government  purposes  notwithstanding any copyright notation here on.
 
 ## Developer
    * Boliang Zhang [zhangb8@rpi.edu]
