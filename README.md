@@ -31,17 +31,30 @@ This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slo
 ## How To Install
 1. Clone the project.
 
-2. Requirements:  
+2. Download external softwares and KBP Chinese slot filling source 
+KBP_Chinese_Source_Corpus: https://www.dropbox.com/s/wilog3m7ntr345z/2014_KBP_Chinese_Source_Corpus_extracted.tar.gz?dl=1
+data and externals: https://www.dropbox.com/s/hyofbax21pjeb7z/data_%26_externals.zip?dl=1
+
+Put folder 'data' and 'externals' in the root directory. And please extract '2014_KBP_Chinese_Source_Corpus_extracted.tar.gz' and move it to 'data/' directory.
+
+3. Required Development Tools:  
 
    * JDK 7 (1.7) or higher.  
    * Ant  
    * Python 2.7
 
-3. Environment variables setting:  
+4. Environment variables setting:  
 
 	* Pylucene requires ant. If ant is not at '/usr/bin/ant', please go to 'externals/pylucene-4.10.1-1/Makefile' and change 'ANT' to where you installed ant.  
 
-	* Default python path is '/usr/bin/python', if you are using Python virtual environment or you installed python in other directory, please go to 'externals/pylucene-4.10.1-1/Makefile' and change 'PREFIX_PYTHON' to directory of your python or python virtual environment.
+	* Default python path is '/usr/bin/python'. If you are using Python virtual environment, please go to 'externals/pylucene-4.10.1-1/Makefile' and change 'PREFIX_PYTHON' to the directory of your python virtual environment. If you installed python in other directory, change 'PREFIX_PYTHON' in 'externals/pylucene-4.10.1-1/Makefile' to directory where your python installed.
+
+5. Install Chinese Slot Filling
+Run 'python setup.py install' to install the package.
+
+## Usage
+Currently only KBP SF format query input is accepted.
+In bin directory, use command 'python ChineseSlotFilling.py <input_query_file_path> <output_directory>'. Please notice that the second argument is a directory. Two results will be created under output directory: 'cn_sf_result.tab' is in KBP SF format and 'cn_sf_result.html' is a 
 
 
 

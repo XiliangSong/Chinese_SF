@@ -93,3 +93,27 @@ setup(
         "Programming Language :: Python",
     ],
 )
+
+# test installation
+import time
+
+from RPISlotFilling.slot_filling.ChineseSlotFilling import ChineseSlotFilling
+
+print('Running Chinese Slot Filling installation test...')
+time.sleep(2)
+
+try:
+    root_path = os.environ['CN_SF_PATH']
+except KeyError:
+    raise KeyError('Environment variable CN_SF_PATH not set.')
+
+cn_sf = ChineseSlotFilling()
+
+cn_sf.get_answer(os.path.join(root_path, 'data/queries_sample.xml'))
+
+cn_sf.export_answer(os.path.join(root_path, 'cn_sf_result.tab'))
+
+cn_sf.visualize(os.path.join(root_path, 'cn_sf_result.html'))
+
+print('Installation test passed.')
+print('Chinese Slot Filling installation completed.')
