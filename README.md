@@ -56,7 +56,7 @@ Run 'python setup.py install' to install the package.
 
 ## Usage
 Currently only KBP SF format query input is accepted.
-In bin directory, use command 'python ChineseSlotFilling.py <input_query_file_path> <output_directory>'. Please notice that the second argument is a directory. Two results will be created under output directory: 'cn_sf_result.tab' is in KBP SF format and 'cn_sf_result.html' is a 
+In bin directory, use command 'python ChineseSlotFilling.py input_query_file_path output_directory'. Please notice that the first argument is query file **path** and the second argument is a **directory**. Two results will be created under output directory: 'cn_sf_result.tab' is in KBP SF format and 'cn_sf_result.html' is a 
 
 
 
