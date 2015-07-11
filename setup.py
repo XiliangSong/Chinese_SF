@@ -35,14 +35,14 @@ print('Building JCC...'),
 p = Popen(['python', 'setup.py', 'build'], stdout=PIPE, stderr=PIPE)
 stdout, stderr = p.communicate()
 print(stdout)
-# print(stderr)
+print(stderr)
 print('Done')
 
 print('Installing JCC...'),
 p = Popen(['python', 'setup.py', 'install'], stdout=PIPE, stderr=PIPE)
 stdout, stderr = p.communicate()
 print(stdout)
-# print(stderr)
+print(stderr)
 print('Done')
 
 # install pylucene
@@ -53,14 +53,14 @@ os.chdir(pylucene_path)
 p = Popen(['make'], stdout=PIPE, stderr=PIPE)
 stdout, stderr = p.communicate()
 print(stdout)
-# print(stderr)
+print(stderr)
 print('Done')
 
 print('Installing Pylucene...'),
 p = Popen(['make', 'install'], stdout=PIPE, stderr=PIPE)
 stdout, stderr = p.communicate()
 print(stdout)
-# print(stderr)
+print(stderr)
 print('Done')
 
 
