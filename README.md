@@ -33,11 +33,11 @@ This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slo
 
 2. Download external softwares and KBP Chinese slot filling source 
 
-KBP_Chinese_Source_Corpus: https://www.dropbox.com/s/wilog3m7ntr345z/2014_KBP_Chinese_Source_Corpus_extracted.tar.gz?dl=1
+  KBP_Chinese_Source_Corpus: https://www.dropbox.com/s/wilog3m7ntr345z/2014_KBP_Chinese_Source_Corpus_extracted.tar.gz?dl=1
 
-data and externals: https://www.dropbox.com/s/hyofbax21pjeb7z/data_%26_externals.zip?dl=1
+  data and externals: https://www.dropbox.com/s/hyofbax21pjeb7z/data_%26_externals.zip?dl=1
 
-Put folder 'data' and 'externals' in the root directory. And please extract '2014_KBP_Chinese_Source_Corpus_extracted.tar.gz' and move it to 'data/' directory.
+  Put folder 'data' and 'externals' in the root directory. And please extract '2014_KBP_Chinese_Source_Corpus_extracted.tar.gz' and move it to 'data/' directory.
 
 3. Required Development Tools:  
 
