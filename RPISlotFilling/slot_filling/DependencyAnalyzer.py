@@ -789,7 +789,7 @@ class DependencyAnalyzer(Analyzer):
                             if not path:
                                 continue
                             shortest_path = min(paths, key=len)
-                            if len(shortest_path - 1) < min_distance:
+                            if len(shortest_path) - 1 < min_distance:
                                 min_distance = len(shortest_path)
                         if min_distance < 4:
                             shareholders.append(org)
@@ -820,6 +820,19 @@ class DependencyAnalyzer(Analyzer):
                     if j > len(substr) and is_substr(data[0][i:i+j], data):
                         substr = data[0][i:i+j]
         return substr
+
+    # same as find_org in PatternAnalyzer
+    def find_org(self, word_list):
+        org_list = []
+        org = []
+        for w in word_list:
+            if w[1]['NamedEntityTag'] in ["GPE", "ORG", "PER"]:
+                org.append(w)
+            elif org:
+                org_list.append(org)
+                org = []
+
+        return org_list
 
     def is_number(self, s):
             try:

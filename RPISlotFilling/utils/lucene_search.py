@@ -72,7 +72,7 @@ def search(query_name, searcher, analyzer, scale):
         if query_name in doc_text:
             found_doc_path.append(doc_path)
 
-    return found_doc_path
+    return found_doc_path[:10]
 
 
 # search

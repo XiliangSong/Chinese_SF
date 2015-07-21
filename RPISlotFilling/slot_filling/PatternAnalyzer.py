@@ -188,7 +188,7 @@ class PatternAnalyzer(Analyzer):
     def org_subsidiaries(self, slot_type):
         line_outputs = []
 
-        f = io.open('data/trigger_word/org_parentchildren.txt', 'r', -1, 'utf-8')
+        f = io.open('data/triggers/org_parentchildren.txt', 'r', -1, 'utf-8')
         trigger_word = []
         for line in f:
             trigger_word.append(line.strip())

@@ -583,7 +583,7 @@ class ChineseSlotFilling(object):
 if __name__ == "__main__":
     cn_sf = ChineseSlotFilling()
 
-    cn_sf.get_answer('data/queries_sample.xml')
+    cn_sf.get_answer('data/queries_sample2.xml')
 
     cn_sf.export_answer('data/cn_sf_result.tab')
 

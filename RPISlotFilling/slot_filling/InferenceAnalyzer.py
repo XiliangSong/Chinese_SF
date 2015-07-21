@@ -36,26 +36,37 @@ class InferenceAnalyzer(Analyzer):
             return []
 
         # if stateorprovince is a municipality, city should be emtpy
-        line_output = self.query_answer.output['per:stateorprovince_of_birth'][0]
+        try:
+            line_output = self.query_answer.output['per:stateorprovince_of_birth'][0]
+        except IndexError:
+            return self.query_answer.output[slot_type]
+
         for city in [u'北京', u'重庆', u'天津', u'上海']:
             if city in line_output.slot_filler:
                 return []
+        return self.query_answer.output[slot_type]
 
     def per_country_of_birth(self, slot_type):
-        return self.country('per:stateorprovince_of_birth')
+        return self.country(slot_type, 'per:stateorprovince_of_birth')
 
     def per_stateorprovince_of_birth(self, slot_type):
-        return self.stateorprovince('per:stateorprovince_of_birth', 'per:city_of_birth')
+        return self.stateorprovince(slot_type, 'per:city_of_birth')
 
     def per_city_of_death(self, slot_type):
         if not self.query_answer.output:
             return []
 
         # if stateorprovince is a municipality, city should be emtpy
-        line_output = self.query_answer.output['per:stateorprovince_of_death'][0]
+        try:
+            line_output = self.query_answer.output['per:stateorprovince_of_death'][0]
+        except IndexError:
+            return self.query_answer.output[slot_type]
+
         for city in [u'北京', u'重庆', u'天津', u'上海']:
             if city in line_output.slot_filler:
                 return []
+
+        return self.query_answer.output[slot_type]
 
     def per_country_of_death(self, slot_type):
         return self.country(slot_type, 'per:stateorprovince_of_death')
