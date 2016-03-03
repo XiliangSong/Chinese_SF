@@ -56,7 +56,7 @@ class ChineseSlotFilling(object):
         self.doc_mapping_table = dict()
         self.evidence = None
 
-        self.CN_SF_PATH = os.environ['CN_SF_PATH']
+        self.CN_SF_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../')
         os.chdir(self.CN_SF_PATH)
 
         # initialize stanford corenlp
@@ -180,10 +180,12 @@ class ChineseSlotFilling(object):
             f.close()
 
         # run stanford segmenter
+        stanford_nlp_dir = os.path.join(self.CN_SF_PATH,
+                                        'externals/stanford-corenlp-full-2014-08-27/')
         segmenter_result = list(batch_parse('data/.tmp/',
-                                            os.path.join(self.CN_SF_PATH,
-                                                         'externals/stanford-corenlp-full-2014-08-27/'),
-                                            properties="StanfordCoreNLP-chinese.Segmenter.properties",
+                                            stanford_nlp_dir,
+                                            properties=os.path.join(stanford_nlp_dir,
+                                                                    "StanfordCoreNLP-chinese.Segmenter.properties")
                                             ))
         for r in segmenter_result:
             self.segmented_docs[r['file_name']] = r['sentences']
@@ -271,7 +273,7 @@ class ChineseSlotFilling(object):
             return out
 
         # run stanford parser in multiprocessing
-        process_num = multiprocessing.cpu_count() if multiprocessing.cpu_count() < 10 else 10
+        process_num = multiprocessing.cpu_count() / 2 if multiprocessing.cpu_count() / 2 < 10 else 10
         p = multiprocessing.Pool(processes=process_num)
         chunked_sent = [dict(item) for item in chunkIt(sent_to_parse.items(), process_num)]
         mp_result = [p.apply_async(stanford_parser,
@@ -504,7 +506,7 @@ class ChineseSlotFilling(object):
         self.load_query(query_file_path)
 
         # load triggers
-        self.load_triggers('data/extended_triggers')
+        self.load_triggers('data/triggers')
 
         # retrieve query docs
         self.retrieve_query_doc()
@@ -582,16 +584,35 @@ class ChineseSlotFilling(object):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print('Incorrect number of arguments.')
+        print('ChineseSlotFilling requires 2 arguments:')
+        print('\t1) KBP format slot filling queries.')
+        print('\t2) Path to output result and visualization result.')
+        exit()
+
+    valid_path = True
+
+    query_path = os.path.join(os.getcwd(), sys.argv[1])
+    if not os.path.exists(query_path):
+        print(query_path+' not exist')
+        valid_path = False
+
+    output_path = os.path.join(os.getcwd(), sys.argv[2])
+    if not os.path.exists(output_path):
+        print(output_path+' not exist')
+        valid_path = False
+
+    if not valid_path:
+        sys.exit()
+
     cn_sf = ChineseSlotFilling()
 
-    cn_sf.get_answer('data/queries.xml')
+    cn_sf.get_answer(query_path)
 
-    cn_sf.export_answer('data/cn_sf_result_with_extended_trigger.tab')
+    cn_sf.export_answer(os.path.join(output_path, 'cn_sf_result.tab'))
 
-    cn_sf.visualize('data/cn_sf_result.html')
-
-
-
+    cn_sf.visualize(os.path.join(output_path, 'cn_sf_result.html'))
 
 
 

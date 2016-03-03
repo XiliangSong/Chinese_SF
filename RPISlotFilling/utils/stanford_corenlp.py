@@ -17,10 +17,11 @@ def stanford_parser(sentences, proc_id=0):
         f = io.open(os.path.join('data/.tmp'+proc_id, sent_id), 'w', -1, 'utf-8')
         f.write(sentences[sent_id])
         f.close()
+    stanford_parser_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                       '../../externals/stanford-corenlp-full-2014-08-27/')
     parsing_result = list(batch_parse('data/.tmp'+proc_id,
-                                      os.path.join(os.environ['CN_SF_PATH'],
-                                                   'externals/stanford-corenlp-full-2014-08-27/'),
-                                      properties="StanfordCoreNLP-chinese.properties",
+                                      stanford_parser_dir,
+                                      properties=os.path.join(stanford_parser_dir, "StanfordCoreNLP-chinese.properties")
                                       ))
     result = dict()
     for r in parsing_result:

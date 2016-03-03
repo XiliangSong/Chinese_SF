@@ -113,8 +113,7 @@ def init_corenlp_command(corenlp_path, memory, properties):
     # but any changes in output format will break parse_parser_results()
     # current_dir_pr = os.path.dirname(os.path.abspath(__file__)) + "/" + properties
     # current_dir_pr = "/Users/boliangzhang/Documents/Phd/Tools/stanford-corenlp-full-2014-08-27/StanfordCoreNLP-chinese.properties"
-    CN_SF_PATH = os.environ['CN_SF_PATH']
-    current_dir_pr = os.path.join(CN_SF_PATH, 'externals/stanford-corenlp-full-2014-08-27', properties)
+    current_dir_pr = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../../../../externals/stanford-corenlp-full-2014-08-27', properties)
     if os.path.exists(properties):
         props = "-props %s" % (properties)
     elif os.path.exists(current_dir_pr):

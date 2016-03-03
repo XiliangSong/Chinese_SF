@@ -1,1 +1,1 @@
-python ../bin/ChineseSlotFilling.py ./input/queries_sample.xml ./output
+python ../RPISlotFilling/slot_filling/ChineseSlotFilling.py ./input/queries_sample.xml ./output

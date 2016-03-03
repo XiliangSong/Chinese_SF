@@ -1,7 +1,8 @@
 #encoding=utf-8
 #!/usr/bin/env python
+import os
 
-INDEX_DIR = "data/Lucene_Index/IndexFiles_corpus_cn.index"
+INDEX_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../data/Lucene_Index/IndexFiles_corpus_cn.index")
 
 import sys, os, lucene, io
 from collections import OrderedDict

@@ -7,11 +7,4 @@
     <beg>2536</beg>
     <end>2538</end>
   </query>
-  <query id="SF14_CMN_TRAINING_011">
-    <name>中国摄影家协会</name>
-    <enttype>ORG</enttype>
-    <docid>XIN_CMN_19940901.0194</docid>
-    <beg>94</beg>
-    <end>100</end>
-  </query>
 </kbpslotfill>

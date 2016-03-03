@@ -3,7 +3,7 @@
 
 This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slot filling aims at collecting from a large-scale multi-source corpus the values (“slot fillers”) for certain attributes (“slot types”) of a query entity, which is a person or some type of organization.[1]
 
-[1] Dian Yu, Hongzhao Huang, Taylor Cassidy, Heng Ji, Chi Wang, Shi Zhi, Jiawei Han, Clare Voss and Malik Magdon-Ismail. The Wisdom of Minority: Unsupervised Slot Filling Validation based on Multi-dimensional Truth-Finding. (COLING 2014)
+[1] Dian Yu, Hongzhao Huang, Taylor Cassidy, Heng Ji, Chi Wang, Shi Zhi, Jiawei Han, Clare Voss and Malik Magdon-Ismail. The Wisdom of Minority: [Unsupervised Slot Filling Validation based on Multi-dimensional Truth-Finding.](http://nlp.cs.rpi.edu/paper/mtm.pdf) (COLING 2014)
 
 ## Example
 * The system takes KBP slot filling query format xml file as input.
@@ -29,42 +29,66 @@ This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slo
 * Outputs are KBP slot filling '.tab' file and HTML file.
 
 ## How To Install
+
 1. Clone the project.
 
 2. Download external softwares and KBP Chinese slot filling source 
 
-  * KBP_Chinese_Source_Corpus: https://www.dropbox.com/s/wilog3m7ntr345z/2014_KBP_Chinese_Source_Corpus_extracted.tar.gz?dl=1
+    * data and externals: [http://blender04.cs.rpi.edu/~zhangb8/ChineseSlotFilling/dependencies/data_and_externals.zip](http://blender04.cs.rpi.edu/~zhangb8/ChineseSlotFilling/dependencies/)
 
-  * data and externals: https://www.dropbox.com/s/hyofbax21pjeb7z/data_%26_externals.zip?dl=1
+    * KBP_Chinese_Source_Corpus: [http://blender04.cs.rpi.edu/~zhangb8/ChineseSlotFilling/dependencies/2014_KBP_Chinese_Source_Corpus_extracted.tar.gz](http://blender04.cs.rpi.edu/~zhangb8/ChineseSlotFilling/dependencies/)
+    
+    * Put folder 'data' and 'externals' in the root directory.
+    
+    * Extract '2014_KBP_Chinese_Source_Corpus_extracted.tar.gz' and move it under 'data/' directory.
 
-  * Put folder 'data' and 'externals' in the root directory. And please extract '2014_KBP_Chinese_Source_Corpus_extracted.tar.gz' and move it to 'data/' directory.
+3. Required Dependencies:  
 
-3. Required Development Tools:  
+    * JDK 7 (1.7) or higher.  
+    * Apache Ant
+    * Python 2.7
+    * GCC
+   
+    * Python packages:
+        * pexpect >= 2.4
+        * xmltodict >= 0.4.6
+        * jianfan >= 0.0.2
+        * jinja2 >= 2.7.3
+        * python-Levenshtein >= 0.12
 
-   * JDK 7 (1.7) or higher.  
-   * Apache Ant
-   * Python 2.7
-   * GCC
-
-4. Environment variables setting:  
+4. Environment and dependencies setting:  
 
 	* Pylucene requires ant. If ant is not at '/usr/bin/ant', please go to 'externals/pylucene-4.10.1-1/Makefile' and change 'ANT' to where you installed ant.  
 
 	* Default python path is '/usr/bin/python'. If you are using Python virtual environment, please go to 'externals/pylucene-4.10.1-1/Makefile' and change 'PREFIX_PYTHON' to the directory of your python virtual environment. If you installed python in other directory, change 'PREFIX_PYTHON' in 'externals/pylucene-4.10.1-1/Makefile' to directory where your python installed.
-  * ANT_HOME=(ant directory path)
-  * CN_SF_PATH=(Chinese_SF root directory path)
-  * JAVA_HOME=(Java directory path)
-  * JCC_JDK=$JAVA_HOME
+    
+    * ANT_HOME=(ANT directory)
+    * JAVA_HOME=(Java directory)
+    * JCC_JDK=$JAVA_HOME
 
-5. Install Chinese Slot Filling
-Run 'python setup.py install' to install the package.
+5. Install pylucene
+
+    Use command:
+    
+    ```
+    python install_pylucene.py
+    ```
+
+6. Add Chinese_SF path to PYTHONPATH in bash profile. Use command
+    ```
+    export PYTHONPATH=$PYTHONPATH:<Chinese_SF path>
+    ```
 
 ## Usage
-Currently only KBP SF format query input is accepted.
-In bin directory, use command 
+
+Currently only KBP SF format query input is accepted. Examples are provided in 'example/'.
+
+Use command 
+
 ```
-python ChineseSlotFilling.py <input_query_file_path> <output_directory>
+python RPISlotFilling/slot_filling/ChineseSlotFilling.py <input_query_file_path> <output_directory>
 ```
+
 Please notice that the first argument is query file **path** and the second argument is a **directory**. Two results will be created under output directory: 'cn_sf_result.tab' in KBP SF format and 'cn_sf_result.html'.
 
 
