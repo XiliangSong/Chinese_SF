@@ -13,15 +13,20 @@ if len(sys.argv) != 3:
     print('\t2) Path to output result and visualization result.')
     exit()
 
-path = os.path.dirname(os.path.realpath(__file__))
+valid_path = True
 
-query_path = os.path.join(path, sys.argv[1])
+query_path = os.path.join(os.getcwd(), sys.argv[1])
 if not os.path.exists(query_path):
-    print(sys.argv[1]+' not exist')
+    print(query_path+' not exist')
+    valid_path = False
 
-output_path = os.path.join(path, sys.argv[2])
+output_path = os.path.join(os.getcwd(), sys.argv[2])
 if not os.path.exists(output_path):
-    print(sys.argv[2]+' not exist')
+    print(output_path+' not exist')
+    valid_path = False
+
+if not valid_path:
+    sys.exit()
 
 cn_sf = ChineseSlotFilling()
 

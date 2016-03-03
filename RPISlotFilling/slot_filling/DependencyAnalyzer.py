@@ -25,7 +25,7 @@ class DependencyAnalyzer(Analyzer):
             if trigger == '':
                 continue
 
-            dpt = DependenceTree(e.parse_reuslt['dependencies'])
+            dpt = DependenceTree(e.parse_result['dependencies'])
 
             query_node, trigger_node = self.find_query_trigger_node(self.query.name, dpt, trigger)
 

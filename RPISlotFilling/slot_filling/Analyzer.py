@@ -103,7 +103,10 @@ class Analyzer(object):
             evidences = self.evidences[slot_type]
             if not evidences:
                 continue
-            line_outputs = self.dispatcher[slot_type](slot_type)  # list of line_outputs
+            try:
+                line_outputs = self.dispatcher[slot_type](slot_type)  # list of line_outputs
+            except:
+                line_outputs = []
             query_answer.output[slot_type] += line_outputs
         return query_answer
 

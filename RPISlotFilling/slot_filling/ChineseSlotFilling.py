@@ -178,6 +178,8 @@ class ChineseSlotFilling(object):
             f = io.open(os.path.join('data/.tmp', doc_id), 'w', -1, 'utf-8')
             f.write(self.cleaned_docs[doc_id])
             f.close()
+
+        # run stanford segmenter
         segmenter_result = list(batch_parse('data/.tmp/',
                                             os.path.join(self.CN_SF_PATH,
                                                          'externals/stanford-corenlp-full-2014-08-27/'),
@@ -188,16 +190,15 @@ class ChineseSlotFilling(object):
         print('segmenting time cost '+str(time.time()-start))
 
         # cpickle for development
-        cPickle.dump(self.segmented_docs, open('data/segmented_docs.pkl', 'wb'))
-
-        self.segmented_docs = cPickle.load(open('data/segmented_docs.pkl', 'rb'))
+        # cPickle.dump(self.segmented_docs, open('data/segmented_docs.pkl', 'wb'))
+        # self.segmented_docs = cPickle.load(open('data/segmented_docs.pkl', 'rb'))
 
         # ************* select evidence ************* #
         sent_to_parse = dict()
 
         self.evidence = OrderedDict()
         for query in self.queries:
-            print('\textracting ' + query.name),
+            print('\textracting ' + query.name)
 
             evidences = OrderedDict()  # {slot_type: sentence_parsed_result}
             for doc_id in self.query_docs[query.id].keys():
@@ -269,7 +270,8 @@ class ChineseSlotFilling(object):
 
             return out
 
-        process_num = 2
+        # run stanford parser in multiprocessing
+        process_num = multiprocessing.cpu_count() if multiprocessing.cpu_count() < 10 else 10
         p = multiprocessing.Pool(processes=process_num)
         chunked_sent = [dict(item) for item in chunkIt(sent_to_parse.items(), process_num)]
         mp_result = [p.apply_async(stanford_parser,
@@ -280,9 +282,8 @@ class ChineseSlotFilling(object):
             sent_parsing_result.update(r)
 
         # cpickle for development
-        cPickle.dump(sent_parsing_result, open('data/sent_parsing_result.pkl', 'wb'))
-
-        sent_parsing_result = cPickle.load(open('data/sent_parsing_result.pkl', 'rb'))
+        # cPickle.dump(sent_parsing_result, open('data/sent_parsing_result.pkl', 'wb'))
+        # sent_parsing_result = cPickle.load(open('data/sent_parsing_result.pkl', 'rb'))
 
         # updating evidences
         for q_id in self.evidence.keys():
@@ -503,7 +504,7 @@ class ChineseSlotFilling(object):
         self.load_query(query_file_path)
 
         # load triggers
-        self.load_triggers('data/triggers')
+        self.load_triggers('data/extended_triggers')
 
         # retrieve query docs
         self.retrieve_query_doc()
@@ -583,9 +584,9 @@ class ChineseSlotFilling(object):
 if __name__ == "__main__":
     cn_sf = ChineseSlotFilling()
 
-    cn_sf.get_answer('data/queries_sample2.xml')
+    cn_sf.get_answer('data/queries.xml')
 
-    cn_sf.export_answer('data/cn_sf_result.tab')
+    cn_sf.export_answer('data/cn_sf_result_with_extended_trigger.tab')
 
     cn_sf.visualize('data/cn_sf_result.html')
 

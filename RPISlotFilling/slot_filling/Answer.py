@@ -5,7 +5,6 @@ import re
 from collections import OrderedDict
 
 class Answer(object):
-
     def __init__(self, query, run_id='SYS'):
         self.query_id = query.id
         self.output = OrderedDict()
@@ -26,61 +25,64 @@ class Answer(object):
         for slot_type in self.output:
             output = self.output[slot_type]
             for line_output in output:
-                for w_p in line_output.wide_provenance:
-                    replace_d = OrderedDict()
+                try:
+                    for w_p in line_output.wide_provenance:
+                        replace_d = OrderedDict()
 
-                    if line_output.slot_filler in w_p.text:
-                        # highlight slot filler
-                        beg = w_p.text.find(line_output.slot_filler)
-                        end = beg+len(line_output.slot_filler)+1
+                        if line_output.slot_filler in w_p.text:
+                            # highlight slot filler
+                            beg = w_p.text.find(line_output.slot_filler)
+                            end = beg+len(line_output.slot_filler)+1
 
-                        replace_d[beg] = ('<font style="BACKGROUND-COLOR: #99CCFF">'+line_output.slot_filler+'</font>',
-                                          len(line_output.slot_filler))
+                            replace_d[beg] = ('<font style="BACKGROUND-COLOR: #99CCFF">'+line_output.slot_filler+'</font>',
+                                              len(line_output.slot_filler))
 
-                    # highlight nearest query name
-                    if self.query.name in w_p.text:
-                        q_beg = [m.start() for m in re.finditer(self.query.name, w_p.text)]
-                        distance = ''
-                        for q in q_beg:
-                            if q - end > 0:
-                                d = q - end
-                            else:
-                                d = beg - q - len(self.query.name)
-                            if not distance or d < distance:
-                                nearest_q = q
-                                distance = d
+                        # highlight nearest query name
+                        if self.query.name in w_p.text:
+                            q_beg = [m.start() for m in re.finditer(self.query.name, w_p.text)]
+                            distance = ''
+                            for q in q_beg:
+                                if q - end > 0:
+                                    d = q - end
+                                else:
+                                    d = beg - q - len(self.query.name)
+                                if not distance or d < distance:
+                                    nearest_q = q
+                                    distance = d
 
-                        replace_d[nearest_q] = ('<font style="BACKGROUND-COLOR: #FF6666">'+self.query.name+'</font>',
-                                                len(self.query.name))
+                            replace_d[nearest_q] = ('<font style="BACKGROUND-COLOR: #FF6666">'+self.query.name+'</font>',
+                                                    len(self.query.name))
 
-                    # highlight trigger if exist
-                    if w_p.trigger:
-                        t_beg = [m.start() for m in re.finditer(w_p.trigger, w_p.text)]
-                        distance = ''
-                        for t in t_beg:
-                            if t - end > 0:
-                                d = t - end
-                            else:
-                                d = beg - t - len(w_p.trigger)
-                            if not distance or d < distance:
-                                nearest_t = t
-                                distance = d
+                        # highlight trigger if exist
+                        if w_p.trigger:
+                            t_beg = [m.start() for m in re.finditer(w_p.trigger, w_p.text)]
+                            distance = ''
+                            for t in t_beg:
+                                if t - end > 0:
+                                    d = t - end
+                                else:
+                                    d = beg - t - len(w_p.trigger)
+                                if not distance or d < distance:
+                                    nearest_t = t
+                                    distance = d
 
-                        replace_d[nearest_t] = ('<font style="BACKGROUND-COLOR: #99FF99">'+w_p.trigger+'</font>',
-                                                len(w_p.trigger))
+                            replace_d[nearest_t] = ('<font style="BACKGROUND-COLOR: #99FF99">'+w_p.trigger+'</font>',
+                                                    len(w_p.trigger))
 
-                    # create html string
-                    html_str = ''
-                    itr_start = 0
-                    for item in sorted(replace_d.items()):
-                        beg = item[0]
-                        replace_str = item[1][0]
-                        length = item[1][1]
-                        html_str += w_p.text[itr_start:beg] + replace_str
-                        itr_start = beg + length
-                    html_str += w_p.text[itr_start:]  # append the last port of string
+                        # create html string
+                        html_str = ''
+                        itr_start = 0
+                        for item in sorted(replace_d.items()):
+                            beg = item[0]
+                            replace_str = item[1][0]
+                            length = item[1][1]
+                            html_str += w_p.text[itr_start:beg] + replace_str
+                            itr_start = beg + length
+                        html_str += w_p.text[itr_start:]  # append the last port of string
 
-                    w_p.html_str = html_str
+                        w_p.html_str = html_str
+                except:
+                    continue
 
 def combine_answer(answer1, answer2):
     if answer1.query_id != answer2.query_id:

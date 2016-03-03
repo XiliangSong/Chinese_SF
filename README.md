@@ -51,13 +51,21 @@ This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slo
 	* Pylucene requires ant. If ant is not at '/usr/bin/ant', please go to 'externals/pylucene-4.10.1-1/Makefile' and change 'ANT' to where you installed ant.  
 
 	* Default python path is '/usr/bin/python'. If you are using Python virtual environment, please go to 'externals/pylucene-4.10.1-1/Makefile' and change 'PREFIX_PYTHON' to the directory of your python virtual environment. If you installed python in other directory, change 'PREFIX_PYTHON' in 'externals/pylucene-4.10.1-1/Makefile' to directory where your python installed.
+  * ANT_HOME=(ant directory path)
+  * CN_SF_PATH=(Chinese_SF root directory path)
+  * JAVA_HOME=(Java directory path)
+  * JCC_JDK=$JAVA_HOME
 
 5. Install Chinese Slot Filling
 Run 'python setup.py install' to install the package.
 
 ## Usage
 Currently only KBP SF format query input is accepted.
-In bin directory, use command 'python ChineseSlotFilling.py input_query_file_path output_directory'. Please notice that the first argument is query file **path** and the second argument is a **directory**. Two results will be created under output directory: 'cn_sf_result.tab' is in KBP SF format and 'cn_sf_result.html' is HTML webpage.
+In bin directory, use command 
+```
+python ChineseSlotFilling.py <input_query_file_path> <output_directory>
+```
+Please notice that the first argument is query file **path** and the second argument is a **directory**. Two results will be created under output directory: 'cn_sf_result.tab' in KBP SF format and 'cn_sf_result.html'.
 
 
 
