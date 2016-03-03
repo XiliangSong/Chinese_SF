@@ -1,0 +1,1 @@
+python ../bin/ChineseSlotFilling.py ./input/queries_sample.xml ./output

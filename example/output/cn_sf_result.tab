@@ -1,0 +1,44 @@
+SF14_CMN_TRAINING_001	per:date_of_birth	SYS	NIL
+SF14_CMN_TRAINING_001	per:age	SYS	xin_cmn_20040714.0019:58-174	82	xin_cmn_20040714.0019:171-172	1
+SF14_CMN_TRAINING_001	per:country_of_birth	SYS	NIL
+SF14_CMN_TRAINING_001	per:stateorprovince_of_birth	SYS	NIL
+SF14_CMN_TRAINING_001	per:city_of_birth	SYS	NIL
+SF14_CMN_TRAINING_001	per:origin	SYS	NIL
+SF14_CMN_TRAINING_001	per:date_of_death	SYS	NIL
+SF14_CMN_TRAINING_001	per:country_of_death	SYS	xin_cmn_20071015.0207:216-219,xin_cmn_20040714.0019:58-174	中国	xin_cmn_20071015.0207:216-217	1
+SF14_CMN_TRAINING_001	per:stateorprovince_of_death	SYS	xin_cmn_20040714.0019:58-174	北京	xin_cmn_20040714.0019:164-165	0
+SF14_CMN_TRAINING_001	per:city_of_death	SYS	NIL
+SF14_CMN_TRAINING_001	per:cause_of_death	SYS	NIL
+SF14_CMN_TRAINING_001	per:countries_of_residence	SYS	NIL
+SF14_CMN_TRAINING_001	per:statesorprovinces_of_residence	SYS	NIL
+SF14_CMN_TRAINING_001	per:cities_of_residence	SYS	NIL
+SF14_CMN_TRAINING_001	per:schools_attended	SYS	NIL
+SF14_CMN_TRAINING_001	per:title	SYS	xin_cmn_20040714.0019:58-174	演员	xin_cmn_20040714.0019:154-155	1
+SF14_CMN_TRAINING_001	per:title	SYS	xin_cmn_20040714.0019:58-174	艺术家	xin_cmn_20040714.0019:66-68	1
+SF14_CMN_TRAINING_001	per:title	SYS	xin_cmn_20040714.0019:58-174	演员	xin_cmn_20040714.0019:154-155	1
+SF14_CMN_TRAINING_001	per:title	SYS	xin_cmn_20040714.0019:58-174	艺术家	xin_cmn_20040714.0019:66-68	1
+SF14_CMN_TRAINING_001	per:employee_or_member_of	SYS	xin_cmn_20040714.0019:58-174	中国广播艺术团	xin_cmn_20040714.0019:145-151	1
+SF14_CMN_TRAINING_001	per:employee_or_member_of	SYS	xin_cmn_20040714.0019:58-174	中国广播艺术团	xin_cmn_20040714.0019:145-151	1
+SF14_CMN_TRAINING_001	per:religion	SYS	NIL
+SF14_CMN_TRAINING_001	per:spouse	SYS	NIL
+SF14_CMN_TRAINING_001	per:children	SYS	NIL
+SF14_CMN_TRAINING_001	per:parents	SYS	NIL
+SF14_CMN_TRAINING_001	per:siblings	SYS	NIL
+SF14_CMN_TRAINING_001	per:other_family	SYS	NIL
+SF14_CMN_TRAINING_001	per:charges	SYS	NIL
+SF14_CMN_TRAINING_011	org:alternate_names	SYS	NIL
+SF14_CMN_TRAINING_011	org:political_religious_affiliation	SYS	NIL
+SF14_CMN_TRAINING_011	org:top_members_employees	SYS	NIL
+SF14_CMN_TRAINING_011	org:number_of_employees_members	SYS	NIL
+SF14_CMN_TRAINING_011	org:members	SYS	NIL
+SF14_CMN_TRAINING_011	org:member_of	SYS	NIL
+SF14_CMN_TRAINING_011	org:subsidiaries	SYS	NIL
+SF14_CMN_TRAINING_011	org:parents	SYS	NIL
+SF14_CMN_TRAINING_011	org:founded_by	SYS	NIL
+SF14_CMN_TRAINING_011	org:date_founded	SYS	NIL
+SF14_CMN_TRAINING_011	org:date_dissolved	SYS	NIL
+SF14_CMN_TRAINING_011	org:country_of_headquarters	SYS	cns_cmn_20100107.1070:151-204	中国	cns_cmn_20100107.1070:188-189	1
+SF14_CMN_TRAINING_011	org:stateorprovince_of_headquarters	SYS	NIL
+SF14_CMN_TRAINING_011	org:city_of_headquarters	SYS	NIL
+SF14_CMN_TRAINING_011	org:shareholders	SYS	NIL
+SF14_CMN_TRAINING_011	org:website	SYS	NIL

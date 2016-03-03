@@ -1,8 +1,8 @@
 /*
 !bin/
+!example/
 !data/dict/
 !data/triggers/
-!data/example/
 !RPISlotFilling/
 !README.md
 !install.py
