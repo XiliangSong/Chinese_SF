@@ -6,7 +6,7 @@ This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slo
 [1] Dian Yu, Hongzhao Huang, Taylor Cassidy, Heng Ji, Chi Wang, Shi Zhi, Jiawei Han, Clare Voss and Malik Magdon-Ismail. The Wisdom of Minority: [Unsupervised Slot Filling Validation based on Multi-dimensional Truth-Finding.](http://nlp.cs.rpi.edu/paper/mtm.pdf) (COLING 2014)
 
 ## Example
-* The system takes KBP slot filling query format xml file as input.
+* System's input is a XML file.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <kbpslotfill>
@@ -17,18 +17,16 @@ This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slo
     <beg>2536</beg>
     <end>2538</end>
   </query>
-  <query id="SF14_CMN_TRAINING_006">
-    <name>华泰财产保险股份有限公司</name>
-    <enttype>ORG</enttype>
-    <docid>CNS_CMN_20100325.1032</docid>
-    <beg>478</beg>
-    <end>489</end>
-  </query>
 </kbpslotfill>
 ```
-* Outputs are KBP slot filling '.tab' file and HTML file.
+* Outputs are KBP slot filling '.tab' file and a HTML file.
+```
+SF14_CMN_TRAINING_001	per:age	SYS	xin_cmn_20040714.0019:58-174	82	xin_cmn_20040714.0019:171-172	1
+SF14_CMN_TRAINING_001	per:country_of_death	SYS	xin_cmn_20071015.0207:216-219,xin_cmn_20040714.0019:58-174	中国	xin_cmn_20071015.0207:216-217	1
+...
+```
 
-## How To Install
+## Install
 
 1. Clone the project.
 
@@ -81,7 +79,7 @@ This is RPI BLENDER Chinese slot filling system. Definition of slot filling: Slo
 
 ## Usage
 
-Currently only KBP SF format query input is accepted. Examples are provided in 'example/'.
+Examples are provided in 'example/'.
 
 Use command 
 
@@ -89,14 +87,7 @@ Use command
 python RPISlotFilling/slot_filling/ChineseSlotFilling.py <input_query_file_path> <output_directory>
 ```
 
-Please notice that the first argument is query file **path** and the second argument is a **directory**. Two results will be created under output directory: 'cn_sf_result.tab' in KBP SF format and 'cn_sf_result.html'.
+Please notice that the first argument is the **file** path and the second argument is a **directory** path. Two results will be created under output directory: 'cn_sf_result.tab' in KBP SF format and 'cn_sf_result.html'.
 
-
-
-
-## License
-
-This work was supported by the US ARL  NS-CTA  No.  W911NF-09-2-0053,  DARPA DEFT No. FA8750-13-2-0041, NSF Awards IIS-1523198,  IIS-1017362, IIS-1320617, IIS-1354329 and  HDTRA1-10-1-0120, gift awards from IBM,  Google,  Disney  and  Bosch.  The  views  and conclusions contained in this document are those of the  authors  and  should  not  be  interpreted  as  representing  the  official  policies,  either  expressed  or implied,  of  the  U.S.  Government.   The  U.S. Government  is  authorized  to  reproduce  and  distribute reprints  for  Government  purposes  notwithstanding any copyright notation here on.
-
-## Developer
+## Contact
    * Boliang Zhang [zhangb8@rpi.edu]
