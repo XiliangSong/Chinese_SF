@@ -25,7 +25,8 @@ p = Popen(['python', 'setup.py', 'install'], stdout=PIPE, stderr=PIPE)
 stdout, stderr = p.communicate()
 print(stdout)
 print(stderr)
-print('Done')
+
+input = raw_input('Make sure no error occurs and success message is shown. (press ENTER to continue)')
 
 # install pylucene
 print('Building Pylucene (This takes a while)...')
@@ -36,11 +37,13 @@ p = Popen(['make'], stdout=PIPE, stderr=PIPE)
 stdout, stderr = p.communicate()
 print(stdout)
 print(stderr)
-print('Done')
+
+input = raw_input('Make sure no error occurs and success message is shown. (press ENTER to continue)')
 
 print('Installing Pylucene...'),
 p = Popen(['make', 'install'], stdout=PIPE, stderr=PIPE)
 stdout, stderr = p.communicate()
 print(stdout)
 print(stderr)
-print('Done')
+
+print 'If no error occurs and success message is shown, pylucene is install successfully.'
