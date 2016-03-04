@@ -1,3 +1,7 @@
+import os
+from subprocess import Popen, PIPE
+
+
 path = os.path.dirname(os.path.abspath(__file__))
 
 # install JCC which is required by Pylucene
