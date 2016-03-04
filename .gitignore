@@ -4,7 +4,6 @@
 !data/triggers/
 !RPISlotFilling/
 !README.md
-!install.py
-!setup.py
+!install_pylucene.py
 !.gitignore
 
